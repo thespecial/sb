@@ -27,5 +27,5 @@ module TestConstants
   DELIVERY_TIME_POPUP_XPATH ||= "//div[@class='PwhE'][contains(., 'when do you want')]"
   NEXT_BUTTON_ID            ||= 'giftPersonNextButton'
   SELECT_DATE_BUTTON_ID     ||= 'giftDateButton'
-  SEND_NOW_BUTTON_ID 		    ||= 'giftRightNowButton'
+  SEND_NOW_BUTTON_ID 	     ||= 'giftRightNowButton'
 end
