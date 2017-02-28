@@ -2,6 +2,7 @@
 class ChoosePackagePopup
   include PageObject
 
+  # Choose Gift popup elements
   button(:package_44,  id: TestConstants::SMALL_PACKAGE_ID)
   button(:package_84,  id: TestConstants::MEDIUM_PACKAGE_ID)
   button(:package_164, id: TestConstants::LARGE_PACKAGE_ID)
@@ -10,6 +11,7 @@ class ChoosePackagePopup
   # Going to check that element is visible. Expect element to be present, in other case - expception
   expected_element_visible(:popup, 10, true)
 
+  # Select package
   def select_package(package_id)
     if package_id == '44$'
       self.package_44
