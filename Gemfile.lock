@@ -34,6 +34,9 @@ GEM
       watir (~> 6.0)
     page_navigation (0.10)
       data_magic (>= 0.22)
+    parallel (1.10.0)
+    parallel_tests (2.13.0)
+      parallel
     rspec-expectations (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.5.0)
@@ -54,6 +57,7 @@ PLATFORMS
 DEPENDENCIES
   cucumber
   page-object (~> 2.0)
+  parallel_tests
   rspec-expectations (~> 3.4)
   selenium-webdriver (~> 3.2.1)
 

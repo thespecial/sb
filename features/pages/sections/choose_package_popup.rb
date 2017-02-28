@@ -1,15 +1,14 @@
-require 'page-object'
-
+# Choose Gift popup as section
 class ChoosePackagePopup
   include PageObject
 
-  button(:package_44, :css => '#giftSize0Button')
+  button(:package_44,  id: TestConstants::SMALL_PACKAGE_ID)
+  button(:package_84,  id: TestConstants::MEDIUM_PACKAGE_ID)
+  button(:package_164, id: TestConstants::LARGE_PACKAGE_ID)
+  div(:popup,          xpath: TestConstants::CHOOSE_PACKAGE_POPUP_XPATH)
 
-  button(:package_84, :id => 'giftSize1Button')
-  button(:package_164, :id => 'giftSize2Button')
-  # h3(:title, :xpath => '//h3[contains(text(), "Choose the size ")]')
-
-  # expected_element_visible(:title, 10, true)
+  # Going to check that element is visible. Expect element to be present, in other case - expception
+  expected_element_visible(:popup, 10, true)
 
   def select_package(package_id)
     if package_id == '44$'
@@ -18,6 +17,8 @@ class ChoosePackagePopup
       self.package_84
     elsif package_id == '164$'
       self.package_164
+    else
+      raise "Cannot choose Package #{package_id}. Aborted!"
     end
   end
 end

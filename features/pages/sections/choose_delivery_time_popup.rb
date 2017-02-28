@@ -1,24 +1,13 @@
-require 'page-object'
-
+# Delivery Time popup
 class ChooseDeliveryTimePopup
   include PageObject
 
-  button(:next, :id => 'giftPersonNextButton')
+  # Popup elements
+  button(:send_email,  id: TestConstants::SEND_NOW_BUTTON_ID)
+  button(:select_date, id: TestConstants::SELECT_DATE_BUTTON_ID)
+  button(:next,        id: TestConstants::NEXT_BUTTON_ID)
+  div(:popup,          xpath: TestConstants::DELIVERY_TIME_POPUP_XPATH)
 
-  div(
-    :popup,
-    :xpath => "//div[@class='PwhE'][contains(., 'when do you want')]"
-  )
-
-  button(:send_email, :id => 'giftRightNowButton')
-  button(:select_date, :id => 'giftDateButton')
-
-
+  # Will check for expected element
   expected_element_visible(:popup, 10, true)
-
-  def fill_form(name, email, message)
-    self.name=name
-    self.email=email
-    self.message=message
-  end
 end

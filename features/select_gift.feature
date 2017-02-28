@@ -5,13 +5,14 @@ Feature: Select Gift
     Given I am on the /gift page
     When I click on “Buy Gift Now” button
     And I click “Buy Gift For <for>” button
+    And I see “Choose Gift” dialog
     And I choose <package> package
-    And I see “Who is this gift for?” dialog
+    And I see “Recipient” dialog
     And I type recipient name "validname"
     And I type recipient email "valid@email.com"
     And I type personal message "message"
     And I click “Next” button
-    And I see “When do you want to notify the recipient of your gift?” dialog
+    And I see “Delivery Time” dialog
     And I click “Send Email”
     Then I am on the /gift/payment page
 
